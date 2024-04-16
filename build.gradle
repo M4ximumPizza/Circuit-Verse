@@ -1,0 +1,47 @@
+plugins {
+    id "java"
+    id "com.github.johnrengelman.shadow" version "8.1.1"
+}
+
+repositories {
+    maven {
+        name "JitPack"
+        url "https://jitpack.io"
+    }
+    mavenCentral()
+}
+
+dependencies {
+    // Logging
+    implementation "org.tinylog:tinylog:$tiny_logger_version"
+    implementation "com.github.tobiasrm:tinylog-coloredconsole:$tiny_logger_version"
+
+    // Gdx
+    implementation "com.badlogicgames.gdx:gdx-platform:$gdx_version"
+    implementation "com.badlogicgames.gdx:gdx-platform:$gdx_version:natives-desktop"
+    implementation "com.badlogicgames.gdx:gdx-backend-lwjgl3:$gdx_version"
+
+    // Audio
+    implementation "games.rednblack.miniaudio:miniaudio:$mini_audio_version"
+    implementation "games.rednblack.miniaudio:miniaudio:$mini_audio_version:natives-desktop"
+    implementation "org.reflections:reflections:$reflection_version"
+
+    // LWJGL dependencies
+    implementation "org.lwjgl:lwjgl:$lwjgl_version"
+    implementation "org.lwjgl:lwjgl-opengl:$lwjgl_version"
+    implementation "org.lwjglx:lwjgl3-awt:$lwjgl3_awt_version"
+    implementation "org.lwjgl:lwjgl-stb:$lwjgl_version"
+    implementation "org.lwjgl:lwjgl-tinyfd:$lwjgl_version"
+    implementation "org.lwjgl:lwjgl-jemalloc:$lwjgl_version"
+    implementation "org.lwjgl:lwjgl-glfw:$lwjgl_version"
+
+    implementation fileTree(dir: "lib", include: "*.jar")
+}
+
+tasks.register("runCM", JavaExec) {
+    group = "craftmine"
+    dependsOn "shadowJar"
+
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = "org.primal.main.Main"
+}
