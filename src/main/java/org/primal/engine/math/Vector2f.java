@@ -4,7 +4,7 @@ package org.primal.engine.math;
  * This class is responsible for creating and destroying the vector. It is responsible
  * for setting the vector values and performing vector operations.
  *
- * @Author MrZombii
+ * @author MrZombii
  */
 public class Vector2f {
     private float x, y;

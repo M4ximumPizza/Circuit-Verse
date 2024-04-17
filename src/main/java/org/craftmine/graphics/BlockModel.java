@@ -9,7 +9,7 @@ import java.util.HashMap;
 /**
  * This class is responsible for storing the data for the block model
  *
- * @Author MrZombii
+ * @author MrZombii
  */
 public class BlockModel {
 

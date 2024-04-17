@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * This is the interface for the dimensions. It is responsible for creating and destroying the dimensions.
  *
- * @Author MrZombii
+ * @author MrZombii
  */
 public interface Dimension {
     

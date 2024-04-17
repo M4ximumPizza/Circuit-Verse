@@ -82,22 +82,12 @@ public class Chunk {
 
         for (int x = 0; x < SIZE; x++) {
             for (int z = 0; z < SIZE; z++) {
-                for (int y = 0; y < HEIGHT; y++) {
-                    int maxHeight = (int)((float) (noiseGenerator.noise(position.getX() + x, position.getZ() + z)+1) * 22);
-                    maxHeight = Math.max(maxHeight, 1);
+                int maxHeight = (int)((float) (noiseGenerator.noise(position.getX() + x, position.getZ() + z)+1) * 22);
+                maxHeight = Math.max(maxHeight, 1);
 
-                    BlockType block = Blocks.AIR;
-                    if (y <= maxHeight) {
-                        if (y < maxHeight) {
-                            block = Blocks.DIRT;
-                        }
-                        if (y == maxHeight) {
-                            block = Blocks.GRASS;
-                        }
-                    }
-                    if (y <= 20) {
-                        block = Blocks.STONE;
-                    }
+                for (int y = 0; y < HEIGHT; y++) {
+                    BlockType block;
+                    block = Blocks.GRASS;
 
                     blocks[x][y][z] = block.New(new Vector3f(x, y, z));
                 }
@@ -106,7 +96,6 @@ public class Chunk {
     }
 
     public Chunk GenerateFaces() {
-
         for (int x = 0; x < SIZE; x++) {
             for (int z = 0; z < SIZE; z++) {
                 for (int y = 0; y < HEIGHT; y++) {

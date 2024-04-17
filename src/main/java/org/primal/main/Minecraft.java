@@ -30,7 +30,7 @@ import java.util.concurrent.TimeUnit;
  * for initializing the game and updating the game. It is also responsible for rendering
  * the game.
  *
- * @Author MrZombii
+ * @author MrZombii
  */
 public class Minecraft implements Runnable{
 
@@ -82,17 +82,17 @@ public class Minecraft implements Runnable{
             if (!Input.isKeyDown(GLFW.GLFW_KEY_2) && a) { a = false;  }
             if (!Input.isKeyDown(GLFW.GLFW_KEY_3) && c) { c = false;  }
 
-            if (Input.isKeyDown(GLFW.GLFW_KEY_1) && !e) {
-                level.switchDimension(BuiltInRegistries.DIMENSIONS.toID(Identifier.fromString("craftmine:overworld")));
-                e = true; }
-            if (Input.isKeyDown(GLFW.GLFW_KEY_2) && !a) {
-                level.switchDimension(BuiltInRegistries.DIMENSIONS.toID(Identifier.fromString("craftmine:test")));
-                a = true;
-            }
-            if (Input.isKeyDown(GLFW.GLFW_KEY_3) && !c) {
-                level.switchDimension(BuiltInRegistries.DIMENSIONS.toID(Identifier.fromString("craftmine:renderchunkdem")));
-                c = true;
-            }
+//            if (Input.isKeyDown(GLFW.GLFW_KEY_1) && !e) {
+//                level.switchDimension(BuiltInRegistries.DIMENSIONS.toID(Identifier.fromString("craftmine:overworld")));
+//                e = true; }
+//            if (Input.isKeyDown(GLFW.GLFW_KEY_2) && !a) {
+//                level.switchDimension(BuiltInRegistries.DIMENSIONS.toID(Identifier.fromString("craftmine:test")));
+//                a = true;
+//            }
+//            if (Input.isKeyDown(GLFW.GLFW_KEY_3) && !c) {
+//                level.switchDimension(BuiltInRegistries.DIMENSIONS.toID(Identifier.fromString("craftmine:renderchunkdem")));
+//                c = true;
+//            }
         }
         Destroy();
     }

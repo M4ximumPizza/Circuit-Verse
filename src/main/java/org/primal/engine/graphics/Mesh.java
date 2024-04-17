@@ -17,7 +17,7 @@ import org.primal.engine.math.Vector3f;
  * for creating and destroying the mesh.
  *
  * @author MrZombii
- * @Author Logan Abernathy
+ * @author Logan Abernathy
  */
 
 @Deprecated(forRemoval = true)

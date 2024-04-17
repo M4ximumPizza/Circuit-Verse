@@ -11,7 +11,7 @@ import java.util.HashMap;
 /**
  * Resources class for the for {@code UVMap}
  *
- * @Author MrZombii
+ * @author MrZombii
  */
 public class UVMap {
     HashMap<Block.Faces, UVData> uvs;

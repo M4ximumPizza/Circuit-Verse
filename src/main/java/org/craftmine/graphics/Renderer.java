@@ -21,8 +21,8 @@ import org.primal.main.Minecraft;
  * This class is responsible for rendering the chunk. It is responsible for
  * rendering the chunk using the shader and the window.
  *
- * @Author MrZombii
- * @Author Logan Abernathy
+ * @author MrZombii
+ * @author Logan Abernathy
  */
 public class Renderer {
     private Shader shader;

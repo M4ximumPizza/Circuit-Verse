@@ -14,8 +14,8 @@ import org.lwjgl.system.MemoryUtil;
  * This class is responsible for creating and destroying the shader. It is
  * responsible for setting the uniform values and binding the shader.
  *
- * @Author MrZombii
- * @Author Logan Abernathy
+ * @author MrZombii
+ * @author Logan Abernathy
  */
 public class Shader {
     private String VertexPath, FragmentPath, VertexFile, FragmentFile;
