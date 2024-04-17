@@ -38,6 +38,14 @@ dependencies {
     implementation fileTree(dir: "lib", include: "*.jar")
 }
 
+shadowJar {
+    manifest {
+        attributes(
+                "Main-Class": "org.primal.main.Main"
+        )
+    }
+}
+
 tasks.register("runCM", JavaExec) {
     group = "craftmine"
     dependsOn "shadowJar"
