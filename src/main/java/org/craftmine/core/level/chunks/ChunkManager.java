@@ -43,7 +43,23 @@ public class ChunkManager {
       });
     }
     return chunk;
-  } // This closing brace was missing
+  }
+
+  public Chunk[] GenerateVisibleChunks(Chunk[] oldChunks) {
+    List<Chunk> chunks = new ArrayList<>();
+    RenderDistanceVectors vec = getRenderDistanceAtPlayer(Constants.Chunks.RenderDistance);
+    for (int i = 0; i < oldChunks.length; i++) {
+      Chunk chunk = oldChunks[i];
+      if (ChunkIsWithinBounds(chunk, vec)) {
+        if (!chunk.HasGenerated && !chunk.IsGenerating) {
+          chunks.add(GenerateChunk(chunk));
+        } else {
+          chunks.add(chunk);
+        }
+      }
+    }
+    return chunks.toArray(new Chunk[0]);
+  }
 
   public Chunk[] RemoveInvisibleChunks(Chunk[] oldChunks) {
     List<Chunk> chunks = new ArrayList<>();

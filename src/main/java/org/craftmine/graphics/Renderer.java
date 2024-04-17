@@ -76,7 +76,7 @@ public class Renderer {
         shader.setUniform("view", Matrix4f.view(mc.camera.getPosition(), mc.camera.getRotation()));
 
         ChunkManager.RenderDistanceVectors vec = ChunkManager.getRenderDistanceAtPlayer(Constants.Chunks.RenderDistance);
-        Chunk[] chunks = dimension.GetChunks();
+        Chunk[] chunks = mc.chunkManager.GenerateVisibleChunks(dimension.GetChunks());
         ChunkManager manager = mc.chunkManager;
         for (int i = 0; i < chunks.length; i++) {
             Chunk chunk = chunks[i];
@@ -113,5 +113,5 @@ public class Renderer {
         }
         shader.unbind();
     }
-    
+
 }

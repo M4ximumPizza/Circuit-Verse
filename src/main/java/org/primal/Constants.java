@@ -20,7 +20,7 @@ public class Constants {
     }
 
     public static final class Chunks {
-        public static final int RenderDistance = 10;
+        public static final int RenderDistance = 12;
 
         public static final int MaxWidth = 16;
         public static final int MaxHeight = 1;
