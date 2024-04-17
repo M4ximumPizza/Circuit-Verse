@@ -8,7 +8,7 @@ import org.primal.Constants.Chunks;
  * for creating and destroying the player. It is also responsible for
  * setting the player's position and rotation.
  *
- * @Author MrZombii
+ * @author MrZombii
  */
 
 @Deprecated(since = "For Now")

@@ -9,7 +9,7 @@ import org.primal.utils.FileUtils;
 /**
  * ResourceTexture class for the for {@code Texture}
  *
- * @Author MrZombii
+ * @author MrZombii
  */
 public class ResourceTexture {
     private Texture texture;

@@ -16,7 +16,7 @@ import org.craftmine.core.registry.UsableRegistry;
  * BuiltInRegistries class for the for
  * {@code BuiltInRegistries}
  *
- * @Author MrZombii
+ * @author MrZombii
  */
 @SuppressWarnings({"unchecked", "rawtypes"})
 public class BuiltInRegistries {

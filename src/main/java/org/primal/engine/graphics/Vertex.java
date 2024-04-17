@@ -7,7 +7,7 @@ import org.primal.engine.math.Vector3f;
  * This class is responsible for storing the data for the mesh. It is responsible
  * for creating and destroying the mesh.
  *
- * @Author MrZombii
+ * @author MrZombii
  */
 
 @Deprecated(forRemoval = true)

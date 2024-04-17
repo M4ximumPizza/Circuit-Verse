@@ -21,8 +21,8 @@ public class Dimensions {
 
     static {
         try {
-            OVERWORLD = Registry.Register(BuiltInRegistries.DIMENSIONS, Identifier.fromString("craftmine:overworld"), new Overworld());
             TEST = Registry.Register(BuiltInRegistries.DIMENSIONS, Identifier.fromString("craftmine:test"), new TestingDim());
+            OVERWORLD = Registry.Register(BuiltInRegistries.DIMENSIONS, Identifier.fromString("craftmine:overworld"), new Overworld());
             RENDERCHUNKDEM = Registry.Register(BuiltInRegistries.DIMENSIONS, Identifier.fromString("craftmine:renderchunkdem"), new RenderChunkTest());
         } catch (Exception e) {
             throw new RuntimeException(e);

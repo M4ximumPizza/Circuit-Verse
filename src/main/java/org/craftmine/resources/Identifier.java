@@ -3,7 +3,7 @@ package org.craftmine.resources;
 /**
  * Identifier class for the for {@code Registry}
  *
- * @Author MrZombii
+ * @author MrZombii
  */
 public class Identifier {
 

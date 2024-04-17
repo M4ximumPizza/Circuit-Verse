@@ -9,7 +9,7 @@ import org.lwjgl.glfw.GLFW;
  * for setting the camera position and rotation and updating the camera. It is also
  * responsible for moving the camera and rotating the camera.
  *
- * @Author MrZombii
+ * @author MrZombii
  * @author Logan Abernathy
  */
 public class Camera {

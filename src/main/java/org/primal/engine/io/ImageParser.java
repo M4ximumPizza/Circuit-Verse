@@ -13,7 +13,7 @@ import static org.lwjgl.stb.STBImage.*;
  * This class is responsible for parsing the image. It is responsible for
  * loading the image and getting the width and height of the image.
  *
- * @Author MrZombii
+ * @author MrZombii
  */
 public class ImageParser {
     public ByteBuffer GetImage() {

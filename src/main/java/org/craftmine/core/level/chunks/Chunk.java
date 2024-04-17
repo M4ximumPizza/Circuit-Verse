@@ -27,8 +27,8 @@ import java.util.List;
  * generating the blocks in the chunk, generating the faces of the blocks, and
  * building the chunk.
  *
- * @Author MrZombii
- * @Author Logan Abernathy
+ * @author MrZombii
+ * @author Logan Abernathy
  */
 public class Chunk {
     private final List<Vector3f> chunkVerts = new ArrayList<>();

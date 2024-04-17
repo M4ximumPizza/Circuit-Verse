@@ -4,7 +4,7 @@ package org.primal.engine.math;
  * This class is responsible for creating and destroying the matrix. It is responsible
  * for setting the matrix values and multiplying the matrix.
  *
- * @Author MrZombii
+ * @author MrZombii
  */
 public class Matrix4f {
     public static final int SIZE = 4;

@@ -27,7 +27,7 @@ import static org.lwjgl.system.MemoryUtil.NULL;
  * This class is responsible for stitching textures together. It is responsible for
  * stitching textures together and rendering the stitched texture.
  *
- * @Author MrZombii
+ * @author MrZombii
  */
 public class TextureStitcherLWJGL {
 

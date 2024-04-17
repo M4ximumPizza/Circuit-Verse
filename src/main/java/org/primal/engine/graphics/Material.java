@@ -9,7 +9,7 @@ import org.newdawn.slick.opengl.TextureLoader;
 /**
  * ResourceTexture class for the for {@code Texture}
  *
- * @Author MrZombii
+ * @author MrZombii
  * @author Logan Abernathy
  */
 
