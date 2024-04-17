@@ -41,44 +41,12 @@ public class Camera {
 
         rotation = Vector3f.add(rotation, new Vector3f(-dy * mouseSenitivity, -dx * mouseSenitivity, 0));
 
+        // Clamp the rotation.x to be between -90 and 90
+        rotation.setX(Math.max(-90f, Math.min(90f, rotation.getX())));
+
         oldMouseX = currentMouseX;
         oldMouseY = currentMouseY;
-
-//        System.out.println(
-//                "X: " + (int)(position.getX() == 0 ? 0 : position.getX() / 16) + " Z:" +
-//                        (int)(position.getZ() == 0 ? 0 : position.getZ() / 16)
-//        );
-
     }
-
-//    public void update(Block object) {
-//        currentMouseX = Input.getMouseX();
-//        currentMouseY = Input.getMouseY();
-//
-//        float dx = (float) (currentMouseX - oldMouseX);
-//        float dy = (float) (currentMouseY - oldMouseY);
-//
-//        if (Input.isButtonDown(GLFW.GLFW_MOUSE_BUTTON_LEFT)){
-//            veritcalAngle -= dy * mouseSenitivity;
-//            horizontalAngle += dx * mouseSenitivity;
-//        }
-//        if (Input.isButtonDown(GLFW.GLFW_MOUSE_BUTTON_RIGHT))
-//            if (distance > 0) distance += dy * mouseSenitivity / 4; else distance = 0.1f;
-//
-//        float horizontalDistance = distance * (float) Math.cos(Math.toRadians(veritcalAngle));
-//        float verticalDistance = distance * (float) Math.sin(Math.toRadians(veritcalAngle));
-//
-//        float xOffset = (float) (horizontalDistance * Math.sin(Math.toRadians(-horizontalAngle)));
-//        float zOffset = (float) (horizontalDistance * Math.cos(Math.toRadians(-horizontalAngle)));
-//
-//        position.set(object.GetPosition().getX() + xOffset, object.GetPosition().getY() - verticalDistance, object.GetPosition().getZ() + zOffset);
-//
-//        rotation.set(veritcalAngle, -horizontalAngle, 0);
-//
-//        oldMouseX = currentMouseX;
-//        oldMouseY = currentMouseY;
-//
-//    }
 
     public Vector3f getPosition() {
         return position;
