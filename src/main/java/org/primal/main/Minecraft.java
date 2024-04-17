@@ -7,6 +7,7 @@ import org.craftmine.graphics.Renderer;
 import org.craftmine.registries.BuiltInRegistries;
 import org.craftmine.resources.Identifier;
 import org.lwjgl.opengl.GL30;
+import org.pmw.tinylog.Logger;
 import org.primal.Constants;
 import org.primal.engine.graphics.Shader;
 import org.primal.engine.io.Input;
@@ -43,6 +44,7 @@ public class Minecraft implements Runnable{
 
     public Camera camera;
     public ChunkManager chunkManager;
+    public ThreadPoolExecutor service;
 
     @Override
     public void run() {
@@ -53,8 +55,6 @@ public class Minecraft implements Runnable{
             e.printStackTrace();
             System.exit(-1);
         }
-
-        ThreadPoolExecutor service = new ThreadPoolExecutor(2, 4, Long.MAX_VALUE, TimeUnit.MILLISECONDS, new ArrayBlockingQueue<>(20));
 
         service.execute(() -> {
 
@@ -94,11 +94,11 @@ public class Minecraft implements Runnable{
                 c = true;
             }
         }
-        service.shutdownNow();
         Destroy();
     }
 
     public void Init() throws Exception {
+        service = new ThreadPoolExecutor(2, 4, Long.MAX_VALUE, TimeUnit.MILLISECONDS, new ArrayBlockingQueue<>(20));
         window = new Window(Windows.Width, Windows.Height, Windows.Title);
 
         try {
@@ -148,7 +148,6 @@ public class Minecraft implements Runnable{
 //        window.DoFullscreenCheck();
         level.Update();
 
-
     }
 
     public void Render() {
@@ -160,6 +159,11 @@ public class Minecraft implements Runnable{
         window.destroy();
         level.Destroy();
         shader.destroy();
+        service.shutdownNow();
+        service.shutdown();
+        service.purge();
+        Logger.info("Game Closed");
+        System.exit(0);
     }
 
     public static Minecraft getInstance() {
