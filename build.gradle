@@ -41,7 +41,7 @@ dependencies {
 shadowJar {
     manifest {
         attributes(
-                "Main-Class": "org.primal.main.Main"
+                "Main-Class": "org.Main"
         )
     }
 }
@@ -51,7 +51,7 @@ tasks.register("runCM", JavaExec) {
     dependsOn "shadowJar"
 
     classpath = sourceSets.main.runtimeClasspath
-    mainClass = "org.primal.main.Main"
+    mainClass = "org.Main"
 }
 
 
@@ -60,5 +60,5 @@ tasks.register("runCMDev", JavaExec) {
     dependsOn "jar"
 
     classpath = sourceSets.main.runtimeClasspath
-    mainClass = "org.primal.main.Main"
+    mainClass = "org.Main"
 }

@@ -1,9 +1,0 @@
-package org.craftmine.core.client.main;
-
-public class Main {
-
-    public static void main(String[] args) {
-        
-    }
-
-}
