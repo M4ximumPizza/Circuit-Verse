@@ -53,3 +53,12 @@ tasks.register("runCM", JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
     mainClass = "org.primal.main.Main"
 }
+
+
+tasks.register("runCMDev", JavaExec) {
+    group = "craftmine"
+    dependsOn "jar"
+
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = "org.primal.main.Main"
+}
