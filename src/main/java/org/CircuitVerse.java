@@ -132,7 +132,8 @@ public class CircuitVerse implements Runnable{
                         Constants.Chunks.MaxHeight + 1,
                         Constants.Chunks.MaxWidth / 2f
                 ),
-                new Vector3f(0 ,0 ,0)
+                new Vector3f(0 ,0 ,0),
+                level
         );
     }
 

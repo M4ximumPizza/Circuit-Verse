@@ -280,4 +280,10 @@ public class Chunk {
         return PBO;
     }
 
+    public Block getBlockAt(int x, int y, int z) {
+        if (x < 0 || y < 0 || z < 0 || x >= SIZE || y >= HEIGHT || z >= SIZE) {
+            return null;
+        }
+        return blocks[x][y][z];
+    }
 }

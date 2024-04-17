@@ -103,6 +103,11 @@ public abstract class Block {
         Bottom
     }
 
+    public boolean isAir() {
+        // This is a placeholder. Replace this with your actual implementation.
+        return this instanceof Air;
+    }
+
     public static class BlockType {
         public Class<? extends Block> BlockRelation;
         public BlockType(Class<? extends Block> blockRelation) {
