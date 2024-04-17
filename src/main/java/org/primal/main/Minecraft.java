@@ -17,6 +17,7 @@ import org.primal.Constants.Windows;
 import org.primal.engine.math.Vector3f;
 import org.primal.level.player.Camera;
 
+import javax.swing.*;
 import java.nio.channels.AsynchronousChannel;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ExecutorCompletionService;

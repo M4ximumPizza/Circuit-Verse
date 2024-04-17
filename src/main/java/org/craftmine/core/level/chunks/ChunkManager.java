@@ -1,18 +1,20 @@
 package org.craftmine.core.level.chunks;
 
-
+import org.craftmine.core.level.chunks.Chunk;
 import org.primal.Constants;
 import org.primal.engine.math.Vector3f;
 import org.primal.main.Minecraft;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
-@SuppressWarnings("removal")
 public class ChunkManager {
 
   public static ChunkManager INSTANCE;
   private static Minecraft mc;
+  private ExecutorService executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
 
   public ChunkManager() {
     INSTANCE = this;
@@ -20,7 +22,6 @@ public class ChunkManager {
   }
 
   private static class Chunker implements Runnable {
-
     public Chunk chunk;
 
     public Chunker(Chunk chunk) {
@@ -34,13 +35,15 @@ public class ChunkManager {
   }
 
   public Chunk GenerateChunk(Chunk chunk) {
-    Chunker ch = new Chunker(chunk);
-    chunk.IsGenerating = true;
-    if (!chunk.HasGenerated) {
-      new Thread(ch).start();
-    };
-    return ch.chunk;
-  }
+    if (!chunk.HasGenerated && !chunk.IsGenerating) {
+      chunk.IsGenerating = true;
+      executorService.execute(() -> {
+        chunk.Generate();
+        chunk.IsGenerating = false;
+      });
+    }
+    return chunk;
+  } // This closing brace was missing
 
   public Chunk[] RemoveInvisibleChunks(Chunk[] oldChunks) {
     List<Chunk> chunks = new ArrayList<>();
@@ -48,7 +51,6 @@ public class ChunkManager {
     for (int i = 0; i < oldChunks.length; i++) {
       Chunk chunk = oldChunks[i];
       if (ChunkIsWithinBounds(chunk, vec)) {
-//        if (!chunk.HasGenerated) chunk = chunk.FinishGenerating();
         chunks.add(chunk);
       }
     }

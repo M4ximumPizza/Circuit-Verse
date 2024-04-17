@@ -53,9 +53,8 @@ public class Overworld implements Dimension {
     @Override
     public void Generate() {
         // Initial number of chunks
-        int numChunks = 50;
+        int numChunks = 10000;
         System.out.println("[WARNING]: GENERATING A LARGE QUANTITY OF CHUNKS " + numChunks);
-        System.out.println("This chunk generation may take a while. Please be patient. [Zombii's Render distance tester]");
         int sideLength = (int) Math.sqrt(numChunks);
         int centerX = sideLength / 2;
         int centerZ = sideLength / 2;

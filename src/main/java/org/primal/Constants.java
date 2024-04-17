@@ -23,6 +23,6 @@ public class Constants {
         public static final int RenderDistance = 10;
 
         public static final int MaxWidth = 16;
-        public static final int MaxHeight = 64;
+        public static final int MaxHeight = 1;
     }
 }
