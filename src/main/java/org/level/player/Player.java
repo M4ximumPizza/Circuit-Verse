@@ -20,7 +20,7 @@ public class Player {
     public Player() {
         Level level = new Level(); // You need to initialize this properly
         Camera = new Camera(
-                new Vector3f(Chunks.MaxWidth / 2, Chunks.MaxHeight+1, Chunks.MaxWidth / 2),
+                new Vector3f(Chunks.MaxWidth / 2, Chunks.MaxHeight + 10, Chunks.MaxWidth / 2), // Make sure the player is above the ground
                 new Vector3f(0, 0, 0),
                 level
         );
