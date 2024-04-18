@@ -51,7 +51,7 @@ tasks.register("runCM", JavaExec) {
     dependsOn "shadowJar"
 
     classpath = sourceSets.main.runtimeClasspath
-    mainClass = "org.Main"
+    mainClass = "dev.circuitverse.main.Main"
 }
 
 
@@ -60,5 +60,5 @@ tasks.register("runCMDev", JavaExec) {
     dependsOn "jar"
 
     classpath = sourceSets.main.runtimeClasspath
-    mainClass = "org.Main"
+    mainClass = "dev.circuitverse.main.Main"
 }
